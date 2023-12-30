@@ -24,14 +24,13 @@ export const Primary: Story = {
 export const Clear: Story = {
   args: {
     children: 'Test',
-    theme: ThemeButton.CLEAR
+    theme: ThemeButton.CLEAR,
   },
 };
 
 export const Outline: Story = {
   args: {
     children: 'Test',
-    theme: ThemeButton.OUTLINE
+    theme: ThemeButton.OUTLINE,
   },
 };
-

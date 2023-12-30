@@ -11,6 +11,9 @@
   "error": {
    "message": "Something went wrong",
    "button": "Reload page"
+  },
+  "sidebar": {
+    "button": "Open/Close"
   }
 }
 
