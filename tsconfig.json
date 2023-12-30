@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "types": ["cross-spawn"],
+    "typeRoots": ["node_modules/@types", "custom/types"],
     "outDir": "./build/",
     "noImplicitAny": true,
     "module": "ESNext",
