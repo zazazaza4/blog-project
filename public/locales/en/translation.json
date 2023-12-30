@@ -1,5 +1,16 @@
 {
-  "Test": "Тест",
-  "Translate": "Переклад",
-  "Укр": "Lang"
+  "Тест": "Test",
+  "Переклад": "Translate",
+  "Сторінка не знайдена": "Not Found Page",
+
+  "header": {
+    "main": "Main",
+    "about": "About"
+  },
+  "lang": "ukr",
+  "error": {
+   "message": "Something went wrong",
+   "button": "Reload page"
+  }
 }
+
