@@ -2,18 +2,21 @@
   "Тест": "Test",
   "Переклад": "Translate",
   "Сторінка не знайдена": "Not Found Page",
-
   "header": {
+    "login": "Sign in",
+    "register": "Sign up"
+  },
+  "error": {
+    "message": "Something went wrong",
+    "button": "Reload page"
+  },
+  "sidebar": {
+    "button": "Open/Close",
     "main": "Main",
     "about": "About"
   },
-  "lang": "ukr",
-  "error": {
-   "message": "Something went wrong",
-   "button": "Reload page"
-  },
-  "sidebar": {
-    "button": "Open/Close"
+  "lang": {
+    "short": "UKR",
+    "long": "Ukrainian"
   }
 }
-

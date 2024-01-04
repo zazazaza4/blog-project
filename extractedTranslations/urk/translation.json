@@ -9,8 +9,16 @@
   },
   "header": {
     "about": "about",
+    "login": "login",
     "main": "main"
   },
   "lang": "lang",
-  "title": "title"
+  "sidebar": {
+    "about": "about",
+    "button": "button",
+    "main": "main"
+  },
+  "title": "title",
+  "Главная": "Главная",
+  "О сайте": "О сайте"
 }
