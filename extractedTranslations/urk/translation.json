@@ -3,6 +3,10 @@
   "Lang": "Lang",
   "Main page": "Main page",
   "Not Found Page": "Not Found Page",
+  "counter": {
+    "decrement": "decrement",
+    "increment": "increment"
+  },
   "error": {
     "button": "button",
     "message": "message"
@@ -12,6 +16,7 @@
     "login": "login",
     "main": "main"
   },
+  "increment": "increment",
   "lang": "lang",
   "sidebar": {
     "about": "about",

@@ -18,5 +18,9 @@
   "lang": {
     "short": "UKR",
     "long": "Ukrainian"
+  },
+  "counter": {
+    "increment": "increment",
+    "decrement": "decrement"
   }
 }
