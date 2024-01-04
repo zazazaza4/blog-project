@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'plugin:storybook/recommended', 'plugin:storybook/recommended'],
+  extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'plugin:storybook/recommended', 'plugin:storybook/recommended', 'plugin:react-hooks/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -13,8 +13,9 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'simple-import-sort', 'i18next'],
+  plugins: ['react', '@typescript-eslint', 'simple-import-sort', 'i18next', 'react-hooks'],
   rules: {
+    indent: ['error', 2],
     '@typescript-eslint/no-unused-vars': 'off',
     'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
     'import/extensions': 'off',
@@ -25,6 +26,8 @@ module.exports = {
     'no-shadow': 'off',
     'no-underscore-dangle': 'off',
     'linebreak-style': 0,
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
     'react/function-component-definition': 'off',
     'react/jsx-filename-extension': [
       2,
@@ -34,16 +37,21 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/require-default-props': 'off',
     'react/jsx-uses-react': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
     'simple-import-sort/exports': 'error',
     'simple-import-sort/imports': [
       'error',
       {
         groups: [
-          ['^react$', '^next', '^[a-z]'],
-          ['^@'],
-          ['^~'],
-          ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
-          ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+          ['^[a-zA-Z]', '^@'],
+          ['^app/'],
+          ['^pages/'],
+          ['^widgets/'],
+          ['^features/'],
+          ['^entities/'],
+          ['^shared/'],
+          ['^shared/assets/'],
           ['^.+\\.s?css$'],
           ['^\\u0000'],
         ],

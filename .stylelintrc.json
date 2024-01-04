@@ -7,7 +7,10 @@
   "overrides": [
     {
       "files": ["**/*.scss"],
-      "customSyntax": "postcss-scss"
+      "customSyntax": "postcss-scss",
+      "rules": {
+        "indentation": 2
+      }
     }
   ]
 }
