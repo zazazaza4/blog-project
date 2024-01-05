@@ -1,4 +1,5 @@
 {
+  "": "",
   "About us": "About us",
   "Lang": "Lang",
   "Main page": "Main page",
@@ -18,6 +19,12 @@
   },
   "increment": "increment",
   "lang": "lang",
+  "login": {
+    "enter": {
+      "password": "password",
+      "username": "username"
+    }
+  },
   "sidebar": {
     "about": "about",
     "button": "button",

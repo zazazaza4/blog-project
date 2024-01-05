@@ -22,5 +22,11 @@
   "counter": {
     "increment": "increment",
     "decrement": "decrement"
+  },
+  "login": {
+    "enter": {
+      "username": "Enter username",
+      "password": "Enter password"
+    }
   }
 }

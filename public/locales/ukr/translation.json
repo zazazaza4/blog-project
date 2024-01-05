@@ -22,5 +22,11 @@
   "counter": {
     "increment": "збільшити",
     "decrement": "зменшити"
+  },
+  "login": {
+    "enter": {
+      "username": "Введіть ім'я користувача",
+      "password": "Введіть пароль"
+    }
   }
 }
