@@ -1,0 +1,19 @@
+{
+  "posts": [
+    { "id": "1", "title": "a title" },
+    { "id": "2", "title": "2 title" },
+    { "id": "3", "title": "3 title" },
+    { "id": "4", "title": "4 another title" },
+    { "id": "5", "title": "5 another title" },
+    { "id": "6", "title": "6 another title" },
+    { "id": "7", "title": "7 another title" },
+    { "id": "8", "title": "8 another title" }
+  ],
+  "comments": [
+    { "id": "1", "text": "a comment about post 1", "postId": "1" },
+    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
