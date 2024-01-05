@@ -1,6 +1,6 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 
-import { CounterSchema } from '../types/counterSchema';
+import { CounterSchema } from '../../../Counter/model/types/counterSchema';
 import { counterActions, counterReducer } from './counterSlice';
 
 describe('counterSlice', () => {
