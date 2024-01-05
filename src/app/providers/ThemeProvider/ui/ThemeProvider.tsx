@@ -1,4 +1,6 @@
-import { FC, useMemo, useState } from 'react';
+import {
+  FC, useEffect, useMemo, useState,
+} from 'react';
 
 import {
   LOCAL_STORAGE_THEME_KEY,
@@ -16,6 +18,13 @@ const ThemeProvider: FC = ({ children }) => {
       theme,
       setTheme,
     }),
+    [theme],
+  );
+
+  useEffect(
+    () => {
+      document.body.className = theme;
+    },
     [theme],
   );
 
