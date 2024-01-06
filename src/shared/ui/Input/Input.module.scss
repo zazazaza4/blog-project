@@ -1,19 +1,21 @@
 .InputWrapper {
   display: flex;
+  font: var(--font-m);
 }
 
 .placeholder {
-  margin-left: 2px;
+  margin-left: 5px;
+  color: var(--primary-color);
 }
 
 .input {
-  font: var(--font-m);
   background-color: transparent !important;
   outline: none;
   border: none;
   width: 100%;
   color: transparent !important;
   text-shadow: 0 0 0  var(--primary-color);
+  font: var(--font-m);
 
   &:focus {
     outline: none;
