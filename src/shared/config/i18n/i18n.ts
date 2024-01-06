@@ -10,10 +10,16 @@ i18n
   .init({
     fallbackLng: 'ukr',
     debug: __IS_DEV__,
-
+    cleanCode: true,
+    nonExplicitSupportedLngs: true,
+    backend: {
+      loadPath: 'locales/{{lng}}/{{ns}}.json',
+    },
     interpolation: {
       escapeValue: false,
     },
+    supportedLngs: ['en', 'ukr'],
+    load: 'languageOnly',
   });
 
 export default i18n;
