@@ -15,6 +15,7 @@
   "header": {
     "about": "about",
     "login": "login",
+    "logout": "logout",
     "main": "main"
   },
   "increment": "increment",
@@ -23,6 +24,10 @@
     "enter": {
       "password": "password",
       "username": "username"
+    },
+    "modal": {
+      "error": "error",
+      "title": "title"
     }
   },
   "sidebar": {

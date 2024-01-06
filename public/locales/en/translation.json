@@ -4,7 +4,8 @@
   "Сторінка не знайдена": "Not Found Page",
   "header": {
     "login": "Sign in",
-    "register": "Sign up"
+    "register": "Sign up",
+    "logout": "Logout"
   },
   "error": {
     "message": "Something went wrong",
@@ -24,6 +25,10 @@
     "decrement": "decrement"
   },
   "login": {
+    "modal": {
+      "title": "Auth Form",
+      "error": "Your username or password is not correct."
+    },
     "enter": {
       "username": "Enter username",
       "password": "Enter password"
