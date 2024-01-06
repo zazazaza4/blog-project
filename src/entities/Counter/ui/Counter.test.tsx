@@ -4,7 +4,7 @@ import { componentRender } from 'shared/lib/tests/componentRender/componentRende
 
 import { Counter } from './Counter';
 
-describe('Sidebar', () => {
+describe('Counter', () => {
   test('test increment', () => {
     componentRender(<Counter />, { initialState: { counter: { value: 10 } } });
 
