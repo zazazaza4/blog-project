@@ -8,10 +8,12 @@
     "decrement": "decrement",
     "increment": "increment"
   },
+  "edit": "edit",
   "error": {
     "button": "button",
     "message": "message"
   },
+  "firstName": "firstName",
   "header": {
     "about": "about",
     "login": "login",
@@ -20,6 +22,7 @@
   },
   "increment": "increment",
   "lang": "lang",
+  "lastName": "lastName",
   "login": {
     "enter": {
       "password": "password",

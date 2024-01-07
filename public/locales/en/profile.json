@@ -1,2 +1,6 @@
-{  "title": "Profile page"
+{
+  "title": "Profile page",
+  "edit": "Edit profile",
+  "firstName": "Your first name",
+  "lastName": "Your last name"
 }
