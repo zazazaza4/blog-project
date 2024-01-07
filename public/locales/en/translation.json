@@ -14,7 +14,8 @@
   "sidebar": {
     "button": "Open/Close",
     "main": "Main",
-    "about": "About"
+    "about": "About",
+    "profile": "Profile"
   },
   "lang": {
     "short": "UKR",
