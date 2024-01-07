@@ -9,7 +9,7 @@ import { SidebarItemType } from '../../model/items';
 import cls from './SidebarItem.module.scss';
 
 interface SidebarItemProps {
-    item?: SidebarItemType;
+    item: SidebarItemType;
     isCollapsed: boolean;
 }
 

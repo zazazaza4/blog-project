@@ -1,5 +1,4 @@
-{
-  "compilerOptions": {
+{  "compilerOptions": {
     "types": ["cross-spawn"],
     "typeRoots": ["node_modules/@types", "custom/types"],
     "outDir": "./build/",
@@ -12,6 +11,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
+    "strict": true,
     "paths": {
       "*": ["./src/*"]
     }
@@ -21,8 +21,5 @@
       "module": "CommonJS"
     }
   },
-  "include": [
-    "./src",
-    "./config/jest/setupTests.ts"
-  ],
+  "include": ["./src", "./config/jest/setupTests.ts"]
 }

@@ -1,7 +1,6 @@
-import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { ThunkConfig, ThunkExtraArg } from 'app/providers/StoreProvider';
+import { ThunkConfig } from 'app/providers/StoreProvider';
 
 import { User, userActions } from 'entities/User';
 
@@ -16,7 +15,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
   'login/loginByUsername',
   async (authData, { extra, dispatch, rejectWithValue }) => {
     try {
-      const response = await extra.api.post('/login', authData);
+      const response = await extra.api.post<User>('/login', authData);
 
       if (!response.data) {
         throw new Error();

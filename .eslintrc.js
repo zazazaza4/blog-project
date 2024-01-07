@@ -16,6 +16,7 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'simple-import-sort', 'i18next', 'react-hooks'],
   rules: {
     indent: ['error', 2],
+    'no-undef': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
     'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
     'import/extensions': 'off',

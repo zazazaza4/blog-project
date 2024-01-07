@@ -35,7 +35,7 @@ export interface ReduxStoreWithManager extends ToolkitStore {
 
 export interface ThunkExtraArg {
     api: AxiosInstance;
-    navigate: NavigateFunction;
+    navigate?: NavigateFunction;
 }
 
 export interface ThunkConfig<T> {
