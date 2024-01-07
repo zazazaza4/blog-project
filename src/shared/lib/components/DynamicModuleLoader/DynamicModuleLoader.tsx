@@ -25,14 +25,14 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = ({
 
   useEffect(() => {
     Object.entries(reducers).forEach(([key, reducer]: ReducersListEntry) => {
-      store.reducerManger.add(key, reducer);
+      store.reducerManger?.add(key, reducer);
       dispatch({ type: `@INIT ${key} reducer` });
     });
 
     return () => {
       if (removeAfterUnmount) {
         Object.entries(reducers).forEach(([key]: ReducersListEntry) => {
-          store.reducerManger.remove(key);
+          store.reducerManger?.remove(key);
           dispatch({ type: `@DESTROY ${key} reducer` });
         });
       }
