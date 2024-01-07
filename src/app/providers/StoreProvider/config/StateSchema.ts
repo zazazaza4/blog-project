@@ -1,3 +1,5 @@
+import { AxiosInstance } from 'axios';
+import { NavigateFunction } from 'react-router-dom';
 import {
   AnyAction, CombinedState, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
@@ -29,4 +31,14 @@ export interface ReducerManager {
 
 export interface ReduxStoreWithManager extends ToolkitStore {
     reducerManager: ReducerManager;
+}
+
+export interface ThunkExtraArg {
+    api: AxiosInstance;
+    navigate: NavigateFunction;
+}
+
+export interface ThunkConfig<T> {
+    rejectValue: T;
+    extra: ThunkExtraArg;
 }
