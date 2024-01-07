@@ -6,14 +6,16 @@ import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore';
 import { LoginSchema } from 'features/AuthByUsername';
 
 import { CounterSchema } from 'entities/Counter';
+import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 
 export interface StateSchema {
-    counter: CounterSchema,
-    user: UserSchema,
+    counter: CounterSchema;
+    user: UserSchema;
 
     // async reducers
-    loginForm?: LoginSchema
+    loginForm?: LoginSchema;
+    profile?: ProfileSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
@@ -26,5 +28,5 @@ export interface ReducerManager {
 }
 
 export interface ReduxStoreWithManager extends ToolkitStore {
-    reducerManger: ReducerManager;
+    reducerManager: ReducerManager;
 }
