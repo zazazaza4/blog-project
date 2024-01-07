@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstName": "Ivan",
+    "lastName": "Ivanov",
+    "age": 86,
+    "currency": "UAH",
+    "country": "Ukraine",
+    "city": "Kharkiv",
+    "username": "admin",
+    "avatar": "https://zmina.info/wp-content/uploads/2019/04/stus.jpg"
+  }
 }
