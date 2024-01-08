@@ -5,7 +5,11 @@
   "lastName": "Your last name",
   "error": {
     "title": "An error occurred while loading the profile",
-    "text": "Try later again"
+    "text": "Try later again",
+    "data": "No data provided",
+    "user": "Incorrect user data",
+    "server": "Server error",
+    "age": "Invalid age provided"
   },
   "cancel": "Cancel",
   "save": "Save",
