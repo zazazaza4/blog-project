@@ -1,6 +1,6 @@
 import { NavigateFunction } from 'react-router-dom';
 import {
-  CombinedState, configureStore, getDefaultMiddleware, Reducer, ReducersMapObject,
+  CombinedState, configureStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 
 import { counterReducer } from 'entities/Counter';
