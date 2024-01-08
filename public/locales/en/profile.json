@@ -2,5 +2,15 @@
   "title": "Profile page",
   "edit": "Edit profile",
   "firstName": "Your first name",
-  "lastName": "Your last name"
+  "lastName": "Your last name",
+  "error": {
+    "title": "An error occurred while loading the profile",
+    "text": "Try later again"
+  },
+  "cancel": "Cancel",
+  "save": "Save",
+  "age": "Your age",
+  "city": "Your city",
+  "username": "Your username",
+  "avatar": "Your avatar"
 }

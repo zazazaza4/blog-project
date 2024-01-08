@@ -34,5 +34,11 @@
       "username": "Enter username",
       "password": "Enter password"
     }
+  },
+  "currency": {
+    "label": "Select a currency"
+  },
+  "country": {
+    "label": "Select a country"
   }
 }

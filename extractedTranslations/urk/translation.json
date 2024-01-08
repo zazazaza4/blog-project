@@ -1,9 +1,13 @@
 {
   "": "",
+  " ": " ",
   "About us": "About us",
   "Lang": "Lang",
   "Main page": "Main page",
   "Not Found Page": "Not Found Page",
+  "age": "age",
+  "cancel": "cancel",
+  "city": "city",
   "counter": {
     "decrement": "decrement",
     "increment": "increment"
@@ -11,7 +15,9 @@
   "edit": "edit",
   "error": {
     "button": "button",
-    "message": "message"
+    "message": "message",
+    "text": "text",
+    "title": "title"
   },
   "firstName": "firstName",
   "header": {
@@ -33,6 +39,11 @@
       "title": "title"
     }
   },
+  "profile": {
+    "error": "error",
+    "text": "text"
+  },
+  "save": "save",
   "sidebar": {
     "about": "about",
     "button": "button",
