@@ -3,9 +3,9 @@ import { StateSchema } from 'app/providers/StoreProvider';
 import { getProfileError } from './getProfileError';
 
 describe('getProfileError', () => {
-  test('should return true', () => {
+  test('should return error', () => {
     const state: DeepPartial<StateSchema> = {
-      profile: { readonly: true, isLoading: false, error: 'error' },
+      profile: { error: 'error' },
     };
     expect(getProfileError(state as StateSchema)).toEqual('error');
   });
