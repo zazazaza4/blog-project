@@ -64,6 +64,7 @@ export default {
   globals: {
     __IS_DEV__: true,
     __API__: '',
+    __PROJECT__: 'jest',
   },
 
   // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
@@ -85,7 +86,7 @@ export default {
   setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
   moduleNameMapper: {
     '\\.(s?css)$': 'identity-obj-proxy',
-    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    '\\.(png|jpg|jpeg|gif|svg)$': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
