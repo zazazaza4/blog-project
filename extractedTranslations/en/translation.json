@@ -12,6 +12,12 @@
     "decrement": "decrement",
     "increment": "increment"
   },
+  "country": {
+    "label": ""
+  },
+  "currency": {
+    "label": ""
+  },
   "edit": "edit",
   "error": {
     "button": "button",
