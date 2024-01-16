@@ -4,7 +4,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
-import { Text, TextTheme } from './Text';
+import { Text, TextSize, TextTheme } from './Text';
 
 const meta = {
   title: 'shared/Text',
@@ -64,3 +64,11 @@ export const OnlyTextDark: Story = {
   },
 };
 OnlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const SizeL: Story = {
+  args: {
+    title: 'Title',
+    text: 'lorem lorem lorem lorem lorem',
+    size: TextSize.L,
+  },
+};
