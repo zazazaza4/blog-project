@@ -25,11 +25,11 @@ export const Code: FC<CodeProps> = memo((
   }, [text]);
 
   return (
-    <pre>
+    <pre className={classNames(cls.code, {}, [className])}>
       <Button onClick={onCopy} className={cls.copyBtn} theme={ButtonTheme.CLEAR}>
         <CopyIcon className={cls.copyIcon} />
       </Button>
-      <code className={classNames(cls.Code, {}, [className])}>
+      <code>
         {text}
       </code>
     </pre>
