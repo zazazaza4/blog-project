@@ -2,22 +2,35 @@
   "": "",
   " ": " ",
   "About us": "About us",
+  "ArticlesPage": "ArticlesPage",
   "Lang": "Lang",
   "Main page": "Main page",
   "Not Found Page": "Not Found Page",
   "age": "age",
+  "avatar": "avatar",
   "cancel": "cancel",
   "city": "city",
+  "copy": "copy",
   "counter": {
     "decrement": "decrement",
     "increment": "increment"
   },
+  "country": {
+    "label": "label"
+  },
+  "currency": {
+    "label": "label"
+  },
   "edit": "edit",
   "error": {
+    "age": "age",
     "button": "button",
+    "data": "data",
     "message": "message",
+    "server": "server",
     "text": "text",
-    "title": "title"
+    "title": "title",
+    "user": "user"
   },
   "firstName": "firstName",
   "header": {
@@ -39,6 +52,7 @@
       "title": "title"
     }
   },
+  "not-found": "not-found",
   "profile": {
     "error": "error",
     "text": "text"
@@ -50,6 +64,7 @@
     "main": "main"
   },
   "title": "title",
+  "username": "username",
   "Главная": "Главная",
   "О сайте": "О сайте"
 }
