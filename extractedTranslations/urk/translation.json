@@ -10,6 +10,7 @@
   "avatar": "avatar",
   "cancel": "cancel",
   "city": "city",
+  "comments": "comments",
   "copy": "copy",
   "counter": {
     "decrement": "decrement",
@@ -52,6 +53,7 @@
       "title": "title"
     }
   },
+  "no-comments": "no-comments",
   "not-found": "not-found",
   "profile": {
     "error": "error",
