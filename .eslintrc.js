@@ -23,6 +23,7 @@ module.exports = {
   rules: {
     indent: ['error', 2],
     'no-undef': 'off',
+    'react/no-array-index-key': 'off',
     'max-len': ['error', { code: 120 }],
     '@typescript-eslint/no-unused-vars': 'off',
     'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
