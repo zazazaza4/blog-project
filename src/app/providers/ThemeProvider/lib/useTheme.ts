@@ -15,18 +15,16 @@ export function useTheme(): UseThemeResult {
 
     switch (theme) {
     case Theme.DARK:
-      newTheme = Theme.DARK;
-      break;
-    case Theme.LIGHT:
       newTheme = Theme.LIGHT;
       break;
-    case Theme.ORANGE:
+    case Theme.LIGHT:
       newTheme = Theme.ORANGE;
       break;
-
-    default:
+    case Theme.ORANGE:
       newTheme = Theme.DARK;
       break;
+    default:
+      newTheme = Theme.LIGHT;
     }
 
     setTheme?.(newTheme);
