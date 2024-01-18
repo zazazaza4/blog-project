@@ -9,7 +9,6 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 
 import { getAddCommentFormError, getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
-import { sendComment } from '../../model/services/sendComment/sendComment';
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentForm';
 
 import cls from './AddCommentForm.module.scss';
@@ -20,7 +19,7 @@ const reducers: ReducersList = {
 
 interface AddCommentFormProps {
   className?: string;
-  onSendComment: () => void;
+  onSendComment: (text: string) => void;
 }
 
 const AddCommentForm: FC<AddCommentFormProps> = memo((
