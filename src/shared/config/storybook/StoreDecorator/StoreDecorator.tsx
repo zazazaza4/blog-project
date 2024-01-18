@@ -2,6 +2,7 @@ import { Decorator } from '@storybook/react';
 
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
 
+import { addCommentFormReducer } from 'features/AddCommentForm/model/slice/addCommentForm';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
@@ -13,6 +14,8 @@ const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
+  addCommentForm: addCommentFormReducer,
+  articleDetailsComments: articleDetailsReducer,
 };
 
 export const StoreDecorator = (
