@@ -17,12 +17,9 @@ export const StoreProvider: FC<StoreProviderProps> = ({
   initialState,
   asyncReducers,
 }) => {
-  const navigate = useNavigate();
-
   const store = createReduxStore(
     initialState as StateSchema,
     asyncReducers as ReducersMapObject<StateSchema>,
-    navigate,
   );
 
   return (
