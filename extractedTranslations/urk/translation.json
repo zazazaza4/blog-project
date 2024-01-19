@@ -8,6 +8,10 @@
   "Not Found Page": "Not Found Page",
   "age": "age",
   "avatar": "avatar",
+  "button": {
+    "backToList": "backToList",
+    "read": "read"
+  },
   "cancel": "cancel",
   "city": "city",
   "comments": "comments",
