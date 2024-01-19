@@ -14,12 +14,13 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/Dynamic
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Button } from 'shared/ui/Button/Button';
+import { Page } from 'shared/ui/Page/Page';
 import { Text } from 'shared/ui/Text/Text';
 
-import { getAritcleCommentsIsLoading } from '../../model/selectors/comments';
+import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/ArticleDetailsCommentsSlice';
+import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 
 import cls from './ArticleDetailsPage.module.scss';
 
@@ -37,7 +38,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
   const dispatch = useAppDispatch();
   const { id } = useParams<{id: string}>();
   const comments = useSelector(getArticleComments.selectAll);
-  const commentsIsLoading = useSelector(getAritcleCommentsIsLoading);
+  const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
   const navigate = useNavigate();
 
   const onBackToList = useCallback(() => {
@@ -62,7 +63,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         <Button onClick={onBackToList}>
           {t('button.backToList')}
         </Button>
@@ -73,7 +74,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
           comments={comments}
           isLoading={commentsIsLoading}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };
