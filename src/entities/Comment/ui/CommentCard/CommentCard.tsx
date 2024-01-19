@@ -40,8 +40,8 @@ export const CommentCard: FC<CommentCardProps> = memo(
 
     return (
       <div className={classNames(cls.CommentCard, {}, [className])}>
-        <AppLink to={`${RoutesPath.profile}${comment.user.id}`} className={cls.header}>
-          {comment.user?.avatar && <Avatar size={30} src={comment.user.avatar} />}
+        <AppLink to={`${RoutesPath.profile}${comment.user?.id}`} className={cls.header}>
+          {comment.user?.avatar && <Avatar size={30} src={comment.user?.avatar} />}
           <Text className={cls.username} title={comment.user?.username} />
         </AppLink>
         <Text className={cls.text} text={comment.text} />
