@@ -11,14 +11,15 @@ const mockedAxios = jest.mocked(axios, true);
 describe('fetchArticlesList', () => {
   test('success ', async () => {
     const data = {
-      value: 1,
+      id: '1',
+      title: 'some',
     };
 
     const thunk = new TestAsyncThunk(fetchArticlesList);
     thunk.api.get.mockReturnValue(Promise.resolve({
       data,
     }));
-    const result = await thunk.callThunk();
+    const result = await thunk.callThunk({ page: 1 });
 
     expect(mockedAxios.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('fulfilled');
@@ -30,7 +31,7 @@ describe('fetchArticlesList', () => {
     thunk.api.post.mockReturnValue(Promise.resolve({
       status: 403,
     }));
-    const result = await thunk.callThunk();
+    const result = await thunk.callThunk({ page: 1 });
 
     expect(mockedAxios.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');
