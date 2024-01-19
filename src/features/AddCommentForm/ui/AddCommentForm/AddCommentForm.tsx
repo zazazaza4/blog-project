@@ -28,7 +28,7 @@ const AddCommentForm: FC<AddCommentFormProps> = memo((
     onSendComment,
   }: AddCommentFormProps,
 ) => {
-  const { t } = useTranslation('article-details');
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const text = useSelector(getAddCommentFormText);
   const error = useSelector(getAddCommentFormError);
@@ -48,14 +48,14 @@ const AddCommentForm: FC<AddCommentFormProps> = memo((
         <Input
           value={text}
           className={cls.input}
-          placeholder={t('comments.input')}
+          placeholder={t('comments')}
           onChange={onCommentTextChange}
         />
         <Button
           onClick={onSendHandler}
           theme={ButtonTheme.OUTLINE}
         >
-          {t('comments.button')}
+          {t('comments')}
         </Button>
       </div>
     </DynamicModuleLoader>
