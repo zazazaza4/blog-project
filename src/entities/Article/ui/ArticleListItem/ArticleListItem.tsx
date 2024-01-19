@@ -41,10 +41,10 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((
 
   const types = <Text text={article.type.join(', ')} className={cls.types} />;
   const views = (
-    <>
+    <div>
       <Text text={String(article.views)} className={cls.view} />
       <Icon Svg={EyeIcon} />
-    </>
+    </div>
   );
 
   if (view === ArticleView.BIG) {
