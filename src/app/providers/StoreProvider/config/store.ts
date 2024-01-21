@@ -2,6 +2,8 @@ import {
   CombinedState, configureStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 
+import { scrollSaveReducer } from 'features/ScrollSave';
+
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 
@@ -18,6 +20,7 @@ export const createReduxStore = (
     ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
+    scrollSave: scrollSaveReducer,
   };
 
   const reducerManager = createReducerManager(rootReducers);
