@@ -26,7 +26,14 @@ module.exports = {
     'react/no-array-index-key': 'off',
     'max-len': ['error', { code: 120 }],
     '@typescript-eslint/no-unused-vars': 'off',
-    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
+    'i18next/no-literal-string':
+    [
+      'error',
+      {
+        markupOnly: true,
+        ignoreAttribute: ['data-testid', 'to', 'target'],
+      },
+    ],
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'import/no-unresolved': 'off',
@@ -49,7 +56,8 @@ module.exports = {
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
     'no-param-reassign': 'off',
-    'simple-import-sort/exports': 'error',
+    'simple-import-sort/exports': ['error'],
+    'arrow-body-style': 'off',
     'simple-import-sort/imports': [
       'error',
       {
