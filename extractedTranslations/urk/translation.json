@@ -3,15 +3,19 @@
   " ": " ",
   "About us": "About us",
   "ArticlesPage": "ArticlesPage",
+  "Blog": "Blog",
   "Lang": "Lang",
   "Main page": "Main page",
   "Not Found Page": "Not Found Page",
   "age": "age",
+  "all": "all",
+  "asc": "asc",
   "avatar": "avatar",
   "button": {
     "backToList": "backToList",
     "read": "read"
   },
+  "by": "by",
   "cancel": "cancel",
   "city": "city",
   "comments": "comments",
@@ -23,9 +27,12 @@
   "country": {
     "label": "label"
   },
+  "created": "created",
   "currency": {
     "label": "label"
   },
+  "desc": "desc",
+  "economics": "economics",
   "edit": "edit",
   "error": {
     "age": "age",
@@ -45,6 +52,7 @@
     "main": "main"
   },
   "increment": "increment",
+  "it": "it",
   "lang": "lang",
   "lastName": "lastName",
   "login": {
@@ -63,14 +71,19 @@
     "error": "error",
     "text": "text"
   },
+  "recommendations": "recommendations",
   "save": "save",
+  "science": "science",
+  "search": "search",
   "sidebar": {
     "about": "about",
     "button": "button",
     "main": "main"
   },
+  "sort": "sort",
   "title": "title",
   "username": "username",
+  "views": "views",
   "Главная": "Главная",
   "О сайте": "О сайте"
 }
