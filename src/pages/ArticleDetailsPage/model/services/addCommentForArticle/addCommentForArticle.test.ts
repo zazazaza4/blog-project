@@ -11,28 +11,50 @@ const mockedAxios = jest.mocked(axios, true);
 describe('addCommentForArticle', () => {
   test('success ', async () => {
     const data = {
-      value: 1,
+      text: 'text',
     };
 
-    const thunk = new TestAsyncThunk(addCommentForArticle);
-    thunk.api.get.mockReturnValue(Promise.resolve({
+    const thunk = new TestAsyncThunk(addCommentForArticle, {
+      user: {
+        authDate: {
+          id: '1',
+        },
+      },
+      articleDetails: {
+        data: {
+          id: '1',
+        },
+      },
+    });
+    thunk.api.post.mockReturnValue(Promise.resolve({
       data,
     }));
-    const result = await thunk.callThunk('1');
+    const result = await thunk.callThunk('text');
 
-    expect(mockedAxios.get).toHaveBeenCalled();
+    expect(mockedAxios.post).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('fulfilled');
     expect(result.payload).toEqual(data);
   });
 
   test('error', async () => {
-    const thunk = new TestAsyncThunk(addCommentForArticle);
+    const thunk = new TestAsyncThunk(addCommentForArticle, {
+      user: {
+        authDate: {
+          id: '1',
+        },
+      },
+      articleDetails: {
+        data: {
+          id: '1',
+        },
+      },
+    });
     thunk.api.post.mockReturnValue(Promise.resolve({
       status: 403,
     }));
     const result = await thunk.callThunk('1');
 
-    expect(mockedAxios.get).toHaveBeenCalled();
+    expect(mockedAxios.post).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');
     expect(result.payload).toBe('error');
   });

@@ -8,7 +8,7 @@ import { ArticleView } from '../../model/types/article';
 import { ArticleViewSelector } from './ArticleViewSelector';
 
 const meta = {
-  title: 'shared/ArticleViewSelector',
+  title: 'entities/Article/ArticleViewSelector',
   component: ArticleViewSelector,
   tags: ['autodocs'],
   argTypes: {},

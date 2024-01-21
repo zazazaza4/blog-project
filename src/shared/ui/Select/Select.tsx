@@ -26,7 +26,7 @@ export const Select: FC<SelectProps> = memo(({
   options,
   value,
   onChange,
-  readonly = true,
+  readonly = false,
 }: SelectProps) => {
   const optionList = useMemo(() => options?.map((opt) => (
     <option

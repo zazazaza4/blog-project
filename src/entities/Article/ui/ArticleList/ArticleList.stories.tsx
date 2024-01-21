@@ -78,7 +78,7 @@ const article: Article = {
 const articles = [article, article, article, article, article, article];
 
 const meta = {
-  title: 'shared/ArticleList',
+  title: 'entities/Article/ArticleList',
   component: ArticleList,
   tags: ['autodocs'],
   argTypes: {},

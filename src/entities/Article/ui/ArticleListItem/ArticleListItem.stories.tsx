@@ -76,7 +76,7 @@ const article: Article = {
 };
 
 const meta = {
-  title: 'shared/ArticleListItem',
+  title: 'entities/Article/ArticleListItem',
   component: ArticleListItem,
   tags: ['autodocs'],
   argTypes: {},
