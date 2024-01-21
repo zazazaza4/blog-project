@@ -88,9 +88,16 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Light: Story = {};
+export const Light: Story = {
+};
 Light.decorators = [
   StoreDecorator({
+    articleDetailsPage: {
+      comments: {
+
+      },
+      recommendations: {},
+    },
     articleDetails: {
       data: article,
     },

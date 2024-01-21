@@ -18,7 +18,26 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {};
-Light.decorators = [StoreDecorator({})];
+Light.decorators = [StoreDecorator({
+  user: {
+    authDate: {
+      avatar: 'adada',
+      id: '1',
+    },
+  },
+})];
 
 export const Dark: Story = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
+  user: {
+    authDate: {
+      avatar: 'adada',
+      id: '1',
+    },
+  },
+})];
+
+export const NoAuth: Story = {};
+NoAuth.decorators = [StoreDecorator({
+
+})];
