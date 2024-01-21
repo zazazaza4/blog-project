@@ -1,7 +1,8 @@
-import { FC, memo } from 'react';
+import { FC, HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Text, TextSize } from 'shared/ui/Text/Text';
 
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -20,6 +21,7 @@ interface ArticleListProps {
   articles: Article[];
   isLoading?: boolean;
   view?: ArticleView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleList: FC<ArticleListProps> = memo((
@@ -28,6 +30,7 @@ export const ArticleList: FC<ArticleListProps> = memo((
     articles,
     view = ArticleView.SMALL,
     isLoading = false,
+    target,
   }: ArticleListProps,
 ) => {
   const { t } = useTranslation();
@@ -38,8 +41,17 @@ export const ArticleList: FC<ArticleListProps> = memo((
       article={article}
       view={view}
       key={article.id}
+      target={target}
     />
   );
+
+  if (!isLoading && !articles.length) {
+    return (
+      <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+        <Text title={t('not-found')} size={TextSize.L} />
+      </div>
+    );
+  }
 
   return (
     <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
