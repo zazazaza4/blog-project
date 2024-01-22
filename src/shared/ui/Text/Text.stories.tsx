@@ -72,3 +72,19 @@ export const SizeL: Story = {
     size: TextSize.L,
   },
 };
+
+export const SizeS: Story = {
+  args: {
+    title: 'Title',
+    text: 'lorem lorem lorem lorem lorem',
+    size: TextSize.S,
+  },
+};
+
+export const SizeM: Story = {
+  args: {
+    title: 'Title',
+    text: 'lorem lorem lorem lorem lorem',
+    size: TextSize.M,
+  },
+};
