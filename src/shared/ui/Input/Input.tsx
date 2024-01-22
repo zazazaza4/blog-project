@@ -10,6 +10,8 @@ import {
 
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 
+import { HStack } from '../Stack';
+
 import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
@@ -68,7 +70,7 @@ export const Input = memo(({
   };
 
   return (
-    <div className={classNames(cls.InputWrapper, {}, [className])}>
+    <HStack gap="4" className={classNames(cls.InputWrapper, {}, [className])}>
       {placeholder && (
         <div className={cls.placeholder}>
           {`${placeholder}>`}
@@ -89,6 +91,6 @@ export const Input = memo(({
         />
         {isCaretVisible && <span className={cls.caret} style={{ left: `${caretPosition * 9}px` }} />}
       </div>
-    </div>
+    </HStack>
   );
 });
