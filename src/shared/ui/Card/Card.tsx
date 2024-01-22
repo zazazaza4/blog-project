@@ -1,5 +1,5 @@
 import {
-  FC, HTMLAttributes, memo, ReactNode,
+  FC, HTMLAttributes, ReactNode,
 } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
