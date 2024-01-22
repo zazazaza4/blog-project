@@ -26,6 +26,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { VStack } from 'shared/ui/Stack/VStack/VStack';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
@@ -126,30 +127,32 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
       <Page className={classNames('', {}, [className])}>
-        <ProfilePageHeader />
-        {
-          validateErrors?.length && validateErrors.map((err) => (
-            <Text
-              key={err}
-              theme={TextTheme.ERROR}
-              text={validateErrorTranslates[err]}
-            />
-          ))
-        }
-        <ProfileCard
-          data={formData}
-          error={error}
-          readonly={readonly}
-          isLoading={isLoading}
-          onChangeFirstname={onChangeFirstname}
-          onChangeLastname={onChangeLastname}
-          onChangeAge={onChangeAge}
-          onChangeCity={onChangeCity}
-          onChangeAvatar={onChangeAvatar}
-          onChangeUsername={onChangeUsername}
-          onChangeCurrency={onChangeCurrency}
-          onChangeCountry={onChangeCountry}
-        />
+        <VStack max gap="16">
+          <ProfilePageHeader />
+          {
+            validateErrors?.length && validateErrors.map((err) => (
+              <Text
+                key={err}
+                theme={TextTheme.ERROR}
+                text={validateErrorTranslates[err]}
+              />
+            ))
+          }
+          <ProfileCard
+            data={formData}
+            error={error}
+            readonly={readonly}
+            isLoading={isLoading}
+            onChangeFirstname={onChangeFirstname}
+            onChangeLastname={onChangeLastname}
+            onChangeAge={onChangeAge}
+            onChangeCity={onChangeCity}
+            onChangeAvatar={onChangeAvatar}
+            onChangeUsername={onChangeUsername}
+            onChangeCurrency={onChangeCurrency}
+            onChangeCountry={onChangeCountry}
+          />
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   );

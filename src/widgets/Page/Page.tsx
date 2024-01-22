@@ -1,7 +1,6 @@
 import {
-  FC, memo, MutableRefObject, ReactNode, UIEvent, useRef,
+  FC, MutableRefObject, ReactNode, UIEvent, useRef,
 } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
@@ -51,13 +50,13 @@ export const Page: FC<PageProps> = (
   }, 500);
 
   return (
-    <section
+    <main
       onScroll={onScroll}
       ref={wrapperRef}
       className={classNames(cls.Page, {}, [className])}
     >
       {children}
       {onScrollEnd && <div className={cls.trigger} ref={triggerRef} />}
-    </section>
+    </main>
   );
 };

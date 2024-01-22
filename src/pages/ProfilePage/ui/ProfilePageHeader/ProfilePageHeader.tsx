@@ -10,9 +10,8 @@ import { getUserAuthData } from 'entities/User';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { HStack } from 'shared/ui/Stack/HStack/HStack';
 import { Text } from 'shared/ui/Text/Text';
-
-import cls from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
   className?: string
@@ -51,43 +50,40 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({ className }) => 
   );
 
   return (
-    <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+    <HStack max justify="between" className={classNames('', {}, [className])}>
       <Text title={t('title')} />
       {
         canEdit && (
-          <div className={cls.btnsWrapper}>
+          <div>
             { readonly ? (
               <Button
-                className={cls.editBtn}
                 theme={ButtonTheme.OUTLINE}
                 onClick={onEdit}
               >
                 {t('edit')}
               </Button>
             ) : (
-              <>
+              <HStack gap="8">
                 <Button
-                  className={cls.editBtn}
                   theme={ButtonTheme.OUTLINE_RED}
                   onClick={onCancelEdit}
                 >
                   {t('cancel')}
                 </Button>
                 <Button
-                  className={cls.saveBtn}
                   theme={ButtonTheme.OUTLINE}
                   onClick={onSave}
 
                 >
                   {t('save')}
                 </Button>
-              </>
+              </HStack>
 
             )}
           </div>
         )
       }
 
-    </div>
+    </HStack>
   );
 };

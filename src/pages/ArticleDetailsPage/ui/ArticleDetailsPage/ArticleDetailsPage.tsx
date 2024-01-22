@@ -14,6 +14,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { VStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text/Text';
 
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
@@ -70,21 +71,23 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <ArticleDetailsPageHeader />
-        <ArticleDetails id={id} />
-        <Text title={t('recommendations')} className={cls.commentTitle} />
-        <ArticleList
-          articles={recommendations}
-          isLoading={recommendationsIsLoading}
-          className={cls.recommendations}
-          target="_blank"
-        />
-        <Text title={t('comments')} className={cls.commentTitle} />
-        <AddCommentForm onSendComment={onSendComment} />
-        <CommentList
-          comments={comments}
-          isLoading={commentsIsLoading}
-        />
+        <VStack gap="16" max>
+          <ArticleDetailsPageHeader />
+          <ArticleDetails id={id} />
+          <Text title={t('recommendations')} className={cls.commentTitle} />
+          <ArticleList
+            articles={recommendations}
+            isLoading={recommendationsIsLoading}
+            className={cls.recommendations}
+            target="_blank"
+          />
+          <Text title={t('comments')} className={cls.commentTitle} />
+          <AddCommentForm onSendComment={onSendComment} />
+          <CommentList
+            comments={comments}
+            isLoading={commentsIsLoading}
+          />
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   );

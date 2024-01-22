@@ -10,6 +10,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
 
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
@@ -89,27 +90,29 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(({
   } else {
     content = (
       <>
-        <div className={cls.avatarWrapper}>
+        <HStack justify="center" max className={cls.avatarWrapper}>
           <Avatar
             size={200}
             src={article?.img}
             className={cls.avatar}
           />
-        </div>
-        <Text
-          className={cls.title}
-          title={article?.title}
-          text={article?.subtitle}
-          size={TextSize.L}
-        />
-        <div className={cls.articleInfo}>
-          <Icon Svg={EyeIcon} className={cls.icon} />
-          <Text text={String(article?.views)} />
-        </div>
-        <div className={cls.articleInfo}>
-          <Icon Svg={CalendarIcon} className={cls.icon} />
-          <Text text={article?.createdAt} />
-        </div>
+        </HStack>
+        <VStack gap="4">
+          <Text
+            className={cls.title}
+            title={article?.title}
+            text={article?.subtitle}
+            size={TextSize.L}
+          />
+          <HStack gap="8" className={cls.articleInfo}>
+            <Icon Svg={EyeIcon} className={cls.icon} />
+            <Text text={String(article?.views)} />
+          </HStack>
+          <HStack gap="8" className={cls.articleInfo}>
+            <Icon Svg={CalendarIcon} className={cls.icon} />
+            <Text text={article?.createdAt} />
+          </HStack>
+        </VStack>
         {article?.blocks.map(renderBlock)}
       </>
     );
@@ -117,9 +120,9 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(({
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.ArticleDetails, {}, [className])}>
+      <VStack gap="16" className={classNames(cls.ArticleDetails, {}, [className])}>
         {content}
-      </div>
+      </VStack>
     </DynamicModuleLoader>
 
   );

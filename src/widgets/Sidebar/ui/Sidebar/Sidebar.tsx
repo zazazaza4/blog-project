@@ -8,6 +8,7 @@ import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
+import { VStack } from 'shared/ui/Stack/VStack/VStack';
 
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
@@ -27,7 +28,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   };
 
   return (
-    <menu
+    <aside
       data-testid="sidebar"
       className={classNames(cls.Sidebar, { [cls.collapsed]: isCollapsed }, [
         className,
@@ -43,7 +44,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       >
         {isCollapsed ? '>' : '<'}
       </Button>
-      <div className={cls.items}>
+      <VStack role="navigation" gap="8">
         {sidebarItemList.map((item) => (
           <SidebarItem
             item={item}
@@ -51,11 +52,11 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
             key={item.path}
           />
         ))}
-      </div>
+      </VStack>
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher isShort={isCollapsed} className={cls.lang} />
       </div>
-    </menu>
+    </aside>
   );
 });
