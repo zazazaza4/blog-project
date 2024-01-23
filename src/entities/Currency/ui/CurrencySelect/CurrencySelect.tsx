@@ -39,7 +39,7 @@ export const CurrencySelect: FC<CurrencySelectProps> = memo(({
       value={value}
       defaultValue={t('currency.label')}
       readonly={readonly}
-      direction="top"
+      direction="top right"
       label={t('currency.label')}
     />
   );
