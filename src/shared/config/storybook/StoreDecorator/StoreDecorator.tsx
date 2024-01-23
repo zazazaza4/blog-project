@@ -6,9 +6,9 @@ import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage';
 
 import { addCommentFormReducer } from 'features/AddCommentForm/model/slice/addCommentForm';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
+import { profileReducer } from 'features/editableProfileCard';
 
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
-import { profileReducer } from 'entities/Profile';
 
 import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
