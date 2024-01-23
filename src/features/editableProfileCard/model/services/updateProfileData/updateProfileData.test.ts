@@ -5,7 +5,7 @@ import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
 import AvatarImg from 'shared/assets/tests/storybook.png';
 
-import { ValidateProfileError } from '../../types/profile';
+import { ValidateProfileError } from '../../types/editableProfileCardSchema';
 import { updateProfileData } from './updateProfileData';
 
 const data = {

@@ -3,7 +3,7 @@ import { Currency } from 'entities/Currency';
 
 import AvatarImg from 'shared/assets/tests/storybook.png';
 
-import { ValidateProfileError } from '../../types/profile';
+import { ValidateProfileError } from '../../types/editableProfileCardSchema';
 import { validateProfileData } from './validateProfileData';
 
 const data = {
