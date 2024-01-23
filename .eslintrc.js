@@ -19,7 +19,14 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'simple-import-sort', 'i18next', 'react-hooks'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'simple-import-sort',
+    'i18next',
+    'react-hooks',
+    'yaroslav-prod-plugin',
+  ],
   rules: {
     indent: ['error', 2],
     'no-undef': 'off',
@@ -31,7 +38,17 @@ module.exports = {
       'error',
       {
         markupOnly: true,
-        ignoreAttribute: ['data-testid', 'to', 'target'],
+        ignoreAttribute: [
+          'data-testid',
+          'role',
+          'to',
+          'target',
+          'justify',
+          'align',
+          'direction',
+          'gap',
+          'as',
+        ],
       },
     ],
     'import/extensions': 'off',
@@ -45,6 +62,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
     'react/function-component-definition': 'off',
+    'yaroslav-prod-plugin/path-checker': 'error',
     'react/jsx-filename-extension': [
       2,
       { extensions: ['.js', '.jsx', '.tsx'] },
