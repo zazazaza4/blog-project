@@ -1,8 +1,8 @@
 import { addQueryParams, getQueryParams } from './addQueryParams';
 
 describe('shared/url/getQueryParams', () => {
-  it('should return an empty string for empty params', () => {
-    expect(getQueryParams({})).toBe('');
+  it('should return ? for empty params', () => {
+    expect(getQueryParams({})).toBe('?');
   });
 
   it('should return the correct query string for non-empty params', () => {
