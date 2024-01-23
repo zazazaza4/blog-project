@@ -22,7 +22,7 @@ export const ArticleRecommendationsList: FC<ArticleRecommendationsListProps> = m
   } = props;
   const { isLoading, data: articles, isError } = useArticleRecommendationsList(3);
 
-  if (isLoading || isError) {
+  if (isLoading || isError || !articles) {
     return null;
   }
 

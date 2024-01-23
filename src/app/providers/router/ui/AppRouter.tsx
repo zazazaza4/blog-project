@@ -9,6 +9,7 @@ import { getUserAuthData } from 'entities/User';
 import { AppRoutesProps, routeConfig } from 'shared/config/routeConfig/routeConfig';
 
 import { RequireAuth } from './RequireAuth';
+import { RequireRoles } from './RequireRoles';
 
 const AppRouter = () => {
   const renderWithWrapper = useCallback((route: AppRoutesProps) => {
@@ -22,7 +23,13 @@ const AppRouter = () => {
       <Route
         key={route.path}
         path={route.path}
-        element={route.authOnly ? <RequireAuth>{element}</RequireAuth> : element}
+        element={route.authOnly ? (
+          <RequireAuth>
+            <RequireRoles roles={route.roles}>
+              {element}
+            </RequireRoles>
+          </RequireAuth>
+        ) : element}
       />
     );
   }, []);
