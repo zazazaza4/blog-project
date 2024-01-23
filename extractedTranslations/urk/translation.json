@@ -7,6 +7,7 @@
   "Lang": "Lang",
   "Main page": "Main page",
   "Not Found Page": "Not Found Page",
+  "The profile is not found": "The profile is not found",
   "age": "age",
   "all": "all",
   "asc": "asc",
@@ -49,7 +50,8 @@
     "about": "about",
     "login": "login",
     "logout": "logout",
-    "main": "main"
+    "main": "main",
+    "profile": "profile"
   },
   "increment": "increment",
   "it": "it",
