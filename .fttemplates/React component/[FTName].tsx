@@ -11,10 +11,11 @@ interface [FTName]Props {
 }
 
 export const [FTName]: FC<[FTName]Props> = memo((
-  { 
+  props: [FTName]Props) => {
+  const { t } = useTranslation();
+  const { 
     className 
-  }: [FTName]Props) => {
-const { t } = useTranslation();
+  } = props;
 
   return (
     <div className={classNames(cls.[FTName], {}, [className])}>
