@@ -12,8 +12,12 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
   },
+  decorators: [
+    (Story) => <div style={{ padding: 100 }}><Story /></div>,
+  ],
   args: {
     defaultValue: 'select a value',
+    value: 'value1',
     items: [
       { value: 'value1', content: 'content1' },
       { value: 'value2', content: 'content2', disabled: true },
@@ -39,5 +43,29 @@ export const Disabled: Story = {
 export const WithLabel: Story = {
   args: {
     label: 'Test label',
+  },
+};
+
+export const TopLeft: Story = {
+  args: {
+    direction: 'top left',
+  },
+};
+
+export const TopRight: Story = {
+  args: {
+    direction: 'top right',
+  },
+};
+
+export const BottomRight: Story = {
+  args: {
+    direction: 'bottom right',
+  },
+};
+
+export const BottomLeft: Story = {
+  args: {
+    direction: 'bottom left',
   },
 };
