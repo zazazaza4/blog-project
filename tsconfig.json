@@ -12,6 +12,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "strict": true,
+    "isolatedModules": true,
     "paths": {
       "*": ["./src/*"]
     }

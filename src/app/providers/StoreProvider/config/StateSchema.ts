@@ -20,6 +20,8 @@ import { UserSchema } from 'entities/User';
 
 import { rtkApi } from 'shared/api/rtkApi';
 
+import { createReduxStore } from './store';
+
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
@@ -61,3 +63,5 @@ export interface ThunkConfig<T> {
     extra: ThunkExtraArg;
     state: StateSchema;
 }
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

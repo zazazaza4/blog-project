@@ -4,7 +4,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
-import { ArticleSortField } from '../../model/types/article';
+import { ArticleSortField } from '../../model/consts/articleConsts';
 import { ArticleSortSelector } from './ArticleSortSelector';
 
 const meta = {

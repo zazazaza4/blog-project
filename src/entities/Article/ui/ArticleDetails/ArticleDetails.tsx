@@ -16,6 +16,7 @@ import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 
+import { ArticleBlockType } from '../../model/consts/articleConsts';
 import {
   getArticleDetailsData,
   getArticleDetailsError,
@@ -23,7 +24,7 @@ import {
 } from '../../model/selectors/articleDetails';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
-import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { ArticleBlock } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
@@ -120,10 +121,9 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(({
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <VStack gap="16" className={classNames(cls.ArticleDetails, {}, [className])}>
+      <VStack gap="16" max className={classNames(cls.ArticleDetails, {}, [className])}>
         {content}
       </VStack>
     </DynamicModuleLoader>
-
   );
 });

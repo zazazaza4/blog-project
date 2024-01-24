@@ -3,7 +3,7 @@ import {
 } from 'react';
 import { useSelector } from 'react-redux';
 
-import { LangSwitcher } from 'widgets/LangSwitcher/ui/LangSwitcher';
+import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 
 import { classNames } from 'shared/lib/classNames/classNames';
