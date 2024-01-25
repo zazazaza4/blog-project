@@ -2,20 +2,21 @@ import {
   FC, memo, useCallback, useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { LoginModal } from 'features/AuthByUsername';
+import { AvatarDropdown } from 'features/avatarDropdown';
+import { NotificationButton } from 'features/notificationButton';
 
 import {
-  getUserAuthData, isUserAdmin, isUserManager, userActions,
+  getUserAuthData,
 } from 'entities/User';
 
 import { RoutesPath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { HStack } from 'shared/ui/Stack';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 
 import cls from './Navbar.module.scss';
@@ -28,9 +29,6 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
   const authData = useSelector(getUserAuthData);
-  const dispatch = useDispatch();
-  const isAdmin = useSelector(isUserAdmin);
-  const isManager = useSelector(isUserManager);
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal((prev) => !prev);
@@ -39,12 +37,6 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
   const onShowModal = useCallback(() => {
     setIsAuthModal((prev) => !prev);
   }, []);
-
-  const onLogout = useCallback(() => {
-    dispatch(userActions.logout());
-  }, [dispatch]);
-
-  const isAdminPanelAvailable = isAdmin || isManager;
 
   if (authData) {
     return (
@@ -61,25 +53,10 @@ export const Navbar: FC<NavbarProps> = memo(({ className }: NavbarProps) => {
         >
           {t('')}
         </AppLink>
-        <Dropdown
-          className={cls.dropdown}
-          direction="bottom left"
-          items={[
-            ...(isAdminPanelAvailable ? [{
-              content: t('header.admin'),
-              href: RoutesPath.admin_panel,
-            }] : []),
-            {
-              content: t('header.profile'),
-              href: RoutesPath.profile + authData.id,
-            },
-            {
-              content: t('header.logout'),
-              onClick: onLogout,
-            },
-          ]}
-          trigger={<Avatar size={30} src={authData.avatar} />}
-        />
+        <HStack gap="16" className={cls.actions}>
+          <NotificationButton />
+          <AvatarDropdown />
+        </HStack>
       </header>
     );
   }

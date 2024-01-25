@@ -5,10 +5,11 @@
   display: flex;
   align-items: center;
   padding: 20px;
+  z-index: var(--header-z-index);
 }
 
 .links,
-.dropdown {
+.actions {
   margin-left: auto;
 }
 
