@@ -52,7 +52,7 @@ export const ProfileCard: FC<ProfileCardProps> = ({
 
   if (isLoading) {
     return (
-      <HStack justify="center" className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+      <HStack max justify="center" className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
         <Loader />
       </HStack>
     );
