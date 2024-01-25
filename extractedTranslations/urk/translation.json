@@ -48,6 +48,7 @@
   "firstName": "firstName",
   "header": {
     "about": "about",
+    "admin": "admin",
     "login": "login",
     "logout": "logout",
     "main": "main",
