@@ -26,8 +26,6 @@ import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { ValidateProfileError } from '../../model/types/editableProfileCardSchema';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 
-import cls from './EditableProfileCard.module.scss';
-
 const reducers: ReducersList = {
   profile: profileReducer,
 };
@@ -126,7 +124,7 @@ export const EditableProfileCard: FC<EditableProfileCardProps> = memo((
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-      <VStack max gap="8" className={classNames(cls.EditableProfileCard, {}, [className])}>
+      <VStack max gap="8" className={classNames('', {}, [className])}>
         <EditableProfileCardHeader />
         {
           validateErrors?.length && validateErrors.map((err) => (
