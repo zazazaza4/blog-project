@@ -6,9 +6,11 @@ import { Listbox as HListBox } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DropdownDirection } from 'shared/types/ui';
 
-import { Button } from '../Button/Button';
-import { HStack } from '../Stack';
+import { Button } from '../../../Button/Button';
+import { HStack } from '../../../Stack';
+import { mapDirectionClass } from '../../styles/consts';
 
+import popupCls from '../../styles/popup.module.scss';
 import cls from './ListBox.module.scss';
 
 export interface ListBoxItem {
@@ -16,13 +18,6 @@ export interface ListBoxItem {
   content: ReactNode;
   disabled?: boolean;
 }
-
-const mapDirectionClass: Record<DropdownDirection, string> = {
-  'bottom left': cls.optionsBottomLeft,
-  'bottom right': cls.optionsBottomRight,
-  'top right': cls.optionsTopRight,
-  'top left': cls.optionsTopLeft,
-};
 
 interface ListBoxProps {
   className?: string;
@@ -63,10 +58,10 @@ export const ListBox: FC<ListBoxProps> = memo((
         value={value}
         onChange={onChange}
         as="div"
-        className={classNames(cls.ListBox, {}, [className])}
+        className={classNames('', {}, [className, popupCls.popup])}
       >
         <HListBox.Button
-          className={cls.trigger}
+          className={popupCls.trigger}
         >
           <Button isDisabled={readonly}>
             {value ?? defaultValue}
@@ -85,9 +80,9 @@ export const ListBox: FC<ListBoxProps> = memo((
               {({ active, selected }) => (
                 <li
                   className={classNames(cls.item, {
-                    [cls.active]: active,
-                    [cls.selected]: selected,
-                    [cls.disabled]: item.disabled,
+                    [popupCls.active]: active,
+                    [popupCls.selected]: selected,
+                    [popupCls.disabled]: item.disabled,
                   })}
                 >
                   {item.content}
