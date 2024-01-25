@@ -4,7 +4,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
-import { NotificationButton } from './ NotificationButton';
+import { NotificationButton } from './NotificationButton';
 
 const meta = {
   title: 'shared/ NotificationButton',
