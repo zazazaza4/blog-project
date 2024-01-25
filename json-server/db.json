@@ -1,4 +1,38 @@
 {
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Notification 1",
+      "description": "Some event occurred",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Notification 2",
+      "description": "Some event occurred",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "3",
+      "title": "Notification 3",
+      "description": "Some event occurred",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "4",
+      "title": "Notification 4",
+      "description": "Some event occurred",
+      "userId": "1"
+    },
+    {
+      "id": "5",
+      "title": "Notification 1",
+      "description": "Some event occurred",
+      "userId": "2"
+    }
+  ],
   "articles": [
     {
       "id": "1",
@@ -487,7 +521,7 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": [
+      "roles": [
         "ADMIN"
       ],
       "avatar": "https://zmina.info/wp-content/uploads/2019/04/stus.jpg"
@@ -496,7 +530,7 @@
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": [
+      "roles": [
         "USER"
       ],
       "avatar": "https://zmina.info/wp-content/uploads/2019/04/stus.jpg"
@@ -505,7 +539,7 @@
       "id": "3",
       "username": "manager",
       "password": "123",
-      "role": [
+      "roles": [
         "MANAGER"
       ],
       "avatar": "https://zmina.info/wp-content/uploads/2019/04/stus.jpg"
