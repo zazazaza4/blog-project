@@ -3,7 +3,7 @@ import {
 } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
 
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
@@ -20,7 +20,7 @@ interface DrawerProps {
 
 const height = window.innerHeight - 100;
 
-export const DrawerContent: FC<DrawerProps> = memo((
+export const DrawerContent: FC<DrawerProps> = (
   props: DrawerProps,
 ) => {
   const {
@@ -101,9 +101,9 @@ export const DrawerContent: FC<DrawerProps> = memo((
       </div>
     </Portal>
   );
-});
+};
 
-export const Drawer: FC<DrawerProps> = memo((props: DrawerProps) => {
+const DrawerAsync: FC<DrawerProps> = (props) => {
   const { isLoaded } = useAnimationLibs();
 
   if (!isLoaded) {
@@ -111,4 +111,12 @@ export const Drawer: FC<DrawerProps> = memo((props: DrawerProps) => {
   }
 
   return <DrawerContent {...props} />;
-});
+};
+
+export const Drawer: FC<DrawerProps> = (props) => {
+  return (
+    <AnimationProvider>
+      <DrawerAsync {...props} />
+    </AnimationProvider>
+  );
+};
