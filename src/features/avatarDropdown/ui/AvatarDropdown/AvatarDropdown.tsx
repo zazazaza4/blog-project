@@ -7,13 +7,13 @@ import {
   isUserAdmin,
   isUserManager,
   userActions,
-} from 'entities/User';
+} from '@/entities/User';
 
-import { RoutesPath } from 'shared/config/routeConfig/routeConfig';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Dropdown } from 'shared/ui/Popups';
+import { RoutesPath } from '@/shared/config/routeConfig/routeConfig';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Dropdown } from '@/shared/ui/Popups';
 
 interface AvatarDropdownProps {
   className?: string;

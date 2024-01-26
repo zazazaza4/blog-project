@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Theme } from 'app/providers/ThemeProvider';
+import { Theme } from '@/app/providers/ThemeProvider';
 
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
 import { ArticleBlockType, ArticleType } from '../../model/consts/articleConsts';
 import {

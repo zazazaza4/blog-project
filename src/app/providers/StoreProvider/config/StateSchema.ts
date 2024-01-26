@@ -1,24 +1,23 @@
 import { AxiosInstance } from 'axios';
 import {
+  ArticleDetailsPageSchema,
+} from 'pages/ArticleDetailsPage';
+import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import {
   AnyAction, CombinedState, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore';
 
-import {
-  ArticleDetailsPageSchema,
-} from 'pages/ArticleDetailsPage';
-import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { AddCommentFormSchema } from '@/features/AddCommentForm';
+import { LoginSchema } from '@/features/AuthByUsername';
+import { ProfileSchema } from '@/features/editableProfileCard';
+import { ScrollSaveSchema } from '@/features/ScrollSave';
 
-import { AddCommentFormSchema } from 'features/AddCommentForm';
-import { LoginSchema } from 'features/AuthByUsername';
-import { ProfileSchema } from 'features/editableProfileCard';
-import { ScrollSaveSchema } from 'features/ScrollSave';
+import { ArticleDetailsSchema } from '@/entities/Article';
+import { CounterSchema } from '@/entities/Counter';
+import { UserSchema } from '@/entities/User';
 
-import { ArticleDetailsSchema } from 'entities/Article';
-import { CounterSchema } from 'entities/Counter';
-import { UserSchema } from 'entities/User';
-
-import { rtkApi } from 'shared/api/rtkApi';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 import { createReduxStore } from './store';
 

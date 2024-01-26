@@ -1,9 +1,9 @@
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider';
 
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 
-import AvatarImg from 'shared/assets/tests/storybook.png';
+import AvatarImg from '@/shared/assets/tests/storybook.png';
 
 import { getProfileForm } from './getProfileForm';
 

@@ -1,7 +1,7 @@
 import axios, { AxiosStatic } from 'axios';
 import { AsyncThunkAction } from '@reduxjs/toolkit';
 
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider';
 
 // eslint-disable-next-line max-len
 type ActionCreatorType<Return, Arg, RejectedValue> = (arg: Arg) => AsyncThunkAction<Return, Arg, {rejectValue: RejectedValue }>

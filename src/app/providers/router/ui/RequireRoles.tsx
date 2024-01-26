@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
 
-import { getUserRoles, UserRole } from 'entities/User';
+import { getUserRoles, UserRole } from '@/entities/User';
 
-import { RoutesPath } from 'shared/config/routeConfig/routeConfig';
+import { RoutesPath } from '@/shared/config/routeConfig/routeConfig';
 
 interface RequireRolesProps {
   children: JSX.Element;

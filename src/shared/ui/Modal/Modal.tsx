@@ -1,8 +1,8 @@
 import {
-  FC, MouseEvent, ReactNode, useCallback, useEffect, useRef, useState,
+  FC, ReactNode,
 } from 'react';
 
-import { useModal } from 'shared/lib/hooks/useModal/useModal';
+import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 
 import { classNames, Mods } from '../../lib/classNames/classNames';
 import { Overlay } from '../Overlay/Overlay';

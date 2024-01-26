@@ -1,7 +1,7 @@
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 
-import AvatarImg from 'shared/assets/tests/storybook.png';
+import AvatarImg from '@/shared/assets/tests/storybook.png';
 
 import { ValidateProfileError } from '../../types/editableProfileCardSchema';
 import { validateProfileData } from './validateProfileData';

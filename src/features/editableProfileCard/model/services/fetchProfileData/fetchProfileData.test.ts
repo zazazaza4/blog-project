@@ -1,9 +1,9 @@
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
-import AvatarImg from 'shared/assets/tests/storybook.png';
+import AvatarImg from '@/shared/assets/tests/storybook.png';
 
 import { fetchProfileData } from './fetchProfileData';
 
