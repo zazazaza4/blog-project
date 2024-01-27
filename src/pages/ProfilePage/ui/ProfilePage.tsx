@@ -18,16 +18,6 @@ interface ProfilePageProps {
 
 const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
   const { id } = useParams<{id: string}>();
-  const { t } = useTranslation('profile');
-
-  if (!id) {
-    return (
-      <Text
-        theme={TextTheme.ERROR}
-        title={t('The profile is not found')}
-      />
-    );
-  }
 
   return (
     <Page className={classNames('', {}, [className])}>

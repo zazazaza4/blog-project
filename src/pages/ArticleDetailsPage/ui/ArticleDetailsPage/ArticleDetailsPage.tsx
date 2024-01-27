@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 
 import { Page } from '@/widgets/Page/Page';
 
+import { ArticleRating } from '@/features/articleRating';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 
 import { ArticleDetails } from '@/entities/Article';
@@ -29,7 +30,6 @@ interface ArticleDetailsPageProps {
 
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
   const { t } = useTranslation('article-details');
-  const dispatch = useAppDispatch();
   const { id } = useParams<{id: string}>();
 
   if (!id) {
@@ -46,6 +46,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
         <VStack gap="16" max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
+          <ArticleRating articleId={id} />
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>
