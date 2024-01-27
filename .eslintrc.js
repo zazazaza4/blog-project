@@ -26,7 +26,7 @@ module.exports = {
     'simple-import-sort',
     'i18next',
     'react-hooks',
-    'yaroslav-prod-plugin',
+    'zazazaza4-prod-plugin',
   ],
   rules: {
     indent: ['error', 2],
@@ -64,7 +64,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
     'react/function-component-definition': 'off',
-    'yaroslav-prod-plugin/path-checker': 'error',
+    'zazazaza4-prod-plugin/path-checker': ['error', { alias: '@' }],
     'react/jsx-filename-extension': [
       2,
       { extensions: ['.js', '.jsx', '.tsx'] },
