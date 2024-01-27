@@ -1,4 +1,6 @@
-import { FC, memo, useCallback } from 'react';
+import {
+  FC, memo, Suspense, useCallback,
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
@@ -9,6 +11,7 @@ import { CommentList } from '@/entities/Comment';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import { VStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text/Text';
 
@@ -42,7 +45,12 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo((
   return (
     <VStack max gap="16" className={classNames('', {}, [className])}>
       <Text title={t('comments')} />
-      <AddCommentForm onSendComment={onSendComment} />
+      <Suspense fallback={
+        <Skeleton width="100%" height={160} />
+      }
+      >
+        <AddCommentForm onSendComment={onSendComment} />
+      </Suspense>
       <CommentList
         comments={comments}
         isLoading={commentsIsLoading}
