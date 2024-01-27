@@ -8,7 +8,7 @@ import { ArticleType } from '../../model/consts/articleConsts';
 import { ArticleTypeTabs } from './ArticleTypeTabs';
 
 const meta = {
-  title: 'shared/ArticleTypeTabs',
+  title: 'entities/Article/ArticleTypeTabs',
   component: ArticleTypeTabs,
   tags: ['autodocs'],
   argTypes: {},

@@ -15,3 +15,15 @@ export default meta;
 type Story = StoryObj<typeof CountrySelect>;
 
 export const Primary: Story = {};
+Primary.decorators = [
+  (Story) => (
+    <div
+      style={{
+        paddingTop: 50,
+        paddingLeft: 30,
+      }}
+    >
+      <Story />
+    </div>
+  ),
+];

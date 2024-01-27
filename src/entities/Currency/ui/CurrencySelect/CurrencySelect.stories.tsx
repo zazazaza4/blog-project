@@ -15,3 +15,15 @@ export default meta;
 type Story = StoryObj<typeof CurrencySelect>;
 
 export const Primary: Story = {};
+Primary.decorators = [
+  (Story) => (
+    <div
+      style={{
+        paddingTop: 150,
+        paddingLeft: 30,
+      }}
+    >
+      <Story />
+    </div>
+  ),
+];
