@@ -6,10 +6,10 @@ import {
 
 import { StateSchema } from '@/app/providers/StoreProvider';
 
-import { Article } from '@/entities/Article';
+import type { Article } from '@/entities/Article';
 
 import { fetchArticleRecommendations } from '../services/fetchArticleRecommendations/fetchArticleRecommendations';
-import { ArticleDetailsRecommendationsSchema } from '../types/articleDetailsRecommendationsSchema';
+import type { ArticleDetailsRecommendationsSchema } from '../types/articleDetailsRecommendationsSchema';
 
 export const recommendationsAdapter = createEntityAdapter<Article>({
   selectId: (article) => article.id,
