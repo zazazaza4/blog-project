@@ -1,7 +1,8 @@
-import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage';
 import { Decorator } from '@storybook/react';
 
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
+
+import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage';
 
 import { addCommentFormReducer } from '@/features/AddCommentForm/model/slice/addCommentForm';
 import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice';
