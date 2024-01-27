@@ -10,6 +10,7 @@
   "The profile is not found": "The profile is not found",
   "age": "age",
   "all": "all",
+  "articles": "articles",
   "asc": "asc",
   "avatar": "avatar",
   "button": {
@@ -19,6 +20,7 @@
   "by": "by",
   "cancel": "cancel",
   "city": "city",
+  "close": "close",
   "comments": "comments",
   "copy": "copy",
   "counter": {
@@ -45,6 +47,8 @@
     "title": "title",
     "user": "user"
   },
+  "feedback": "feedback",
+  "feedbackTitle": "feedbackTitle",
   "firstName": "firstName",
   "header": {
     "about": "about",
@@ -78,12 +82,14 @@
   "save": "save",
   "science": "science",
   "search": "search",
+  "send": "send",
   "sidebar": {
     "about": "about",
     "button": "button",
     "main": "main"
   },
   "sort": "sort",
+  "thanks": "thanks",
   "title": "title",
   "username": "username",
   "views": "views",
