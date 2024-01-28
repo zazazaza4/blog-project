@@ -7,7 +7,7 @@ import { ArticleList } from '@/entities/Article';
 
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
 
 import {
   getArticlesPageError, getArticlesPageIsLoading,
