@@ -2,7 +2,7 @@ import { Decorator } from '@storybook/react';
 
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 
-import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage';
+import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing';
 
 import { addCommentFormReducer } from '@/features/AddCommentForm/testing';
 import { loginReducer } from '@/features/AuthByUsername/testing';

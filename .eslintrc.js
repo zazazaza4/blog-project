@@ -74,6 +74,13 @@ module.exports = {
         testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
       },
     ],
+    'zazazaza4-prod-plugin/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+      },
+    ],
     'react/jsx-filename-extension': [
       2,
       { extensions: ['.js', '.jsx', '.tsx'] },

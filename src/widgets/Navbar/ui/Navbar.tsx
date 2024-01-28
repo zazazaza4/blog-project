@@ -12,7 +12,7 @@ import {
   getUserAuthData,
 } from '@/entities/User';
 
-import { RoutesPath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutesPath } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';

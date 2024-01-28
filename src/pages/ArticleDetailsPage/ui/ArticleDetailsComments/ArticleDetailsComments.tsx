@@ -50,11 +50,11 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo((
       }
       >
         <AddCommentForm onSendComment={onSendComment} />
+        <CommentList
+          comments={comments}
+          isLoading={commentsIsLoading}
+        />
       </Suspense>
-      <CommentList
-        comments={comments}
-        isLoading={commentsIsLoading}
-      />
     </VStack>
   );
 });

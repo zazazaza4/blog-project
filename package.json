@@ -77,7 +77,7 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-storybook": "^0.6.15",
     "eslint-plugin-unused-imports": "^3.0.0",
-    "eslint-plugin-zazazaza4-prod-plugin": "^0.0.4",
+    "eslint-plugin-zazazaza4-prod-plugin": "^0.0.7",
     "file-loader": "^6.2.0",
     "fork-ts-checker-webpack-plugin": "^9.0.2",
     "html-webpack-plugin": "^5.5.0",
