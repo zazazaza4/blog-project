@@ -1,10 +1,7 @@
-import { Suspense, useCallback, useMemo } from 'react';
-import { useSelector } from 'react-redux';
+import { Suspense, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { PageLoader } from '@/widgets/PageLoader';
-
-import { getUserAuthData } from '@/entities/User';
 
 import { AppRoutesProps, routeConfig } from '@/shared/config/routeConfig/routeConfig';
 

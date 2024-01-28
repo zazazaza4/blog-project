@@ -1,5 +1,5 @@
 import {
-  FC, HTMLAttributeAnchorTarget, memo, useCallback,
+  FC, HTMLAttributeAnchorTarget, memo,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 

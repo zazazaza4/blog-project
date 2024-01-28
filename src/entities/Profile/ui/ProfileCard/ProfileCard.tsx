@@ -2,14 +2,12 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Country, CountrySelect } from '@/entities/Country';
-import { CurrencySelect } from '@/entities/Currency';
-import { Currency } from '@/entities/Currency/model/types/currency';
+import { Currency, CurrencySelect } from '@/entities/Currency';
 
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Input } from '@/shared/ui/Input/Input';
 import { Loader } from '@/shared/ui/Loader/Loader';
-import { Select } from '@/shared/ui/Select/Select';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text';
 

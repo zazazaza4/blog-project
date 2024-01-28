@@ -27,6 +27,7 @@ module.exports = {
     'i18next',
     'react-hooks',
     'zazazaza4-prod-plugin',
+    'unused-imports',
   ],
   rules: {
     indent: ['error', 2],
@@ -58,6 +59,7 @@ module.exports = {
     'import/no-unresolved': 'off',
     'no-unused-vars': 'off',
     'import/prefer-default-export': 'off',
+    'unused-imports/no-unused-imports': 'error',
     'no-shadow': 'off',
     'no-underscore-dangle': 'off',
     'linebreak-style': 0,
@@ -65,6 +67,13 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'error',
     'react/function-component-definition': 'off',
     'zazazaza4-prod-plugin/path-checker': ['error', { alias: '@' }],
+    'zazazaza4-prod-plugin/public-api-imports': [
+      'error',
+      {
+        alias: '@',
+        testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
+      },
+    ],
     'react/jsx-filename-extension': [
       2,
       { extensions: ['.js', '.jsx', '.tsx'] },

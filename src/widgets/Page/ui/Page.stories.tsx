@@ -5,7 +5,7 @@ import { Theme } from '@/app/providers/ThemeProvider';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
-import { Page } from './Page';
+import { Page } from '../Page';
 
 const meta = {
   title: 'widget/Page',

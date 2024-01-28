@@ -1,3 +1,4 @@
+export { ArticleBlockType } from './model/consts/articleConsts';
 export { ArticleSortField, ArticleType, ArticleView } from './model/consts/articleConsts';
 export { getArticleDetailsData } from './model/selectors/articleDetails';
 export type { Article } from './model/types/article';
