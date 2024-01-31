@@ -9,7 +9,7 @@ import {
   userActions,
 } from '@/entities/User';
 
-import { RoutesPath } from '@/shared/const/router';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -46,18 +46,18 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo((
       items={[
         ...(isAdminPanelAvailable ? [{
           content: t('header.admin'),
-          href: RoutesPath.admin_panel,
+          href: getRouteAdmin(),
         }] : []),
         {
           content: t('header.profile'),
-          href: RoutesPath.profile + authData.id,
+          href: getRouteProfile(authData.id),
         },
         {
           content: t('header.logout'),
           onClick: onLogout,
         },
       ]}
-      trigger={<Avatar size={40} src={authData.avatar} />}
+      trigger={<Avatar fallbackInverted size={40} src={authData.avatar} />}
     />
   );
 });
