@@ -1,38 +1,35 @@
-import {
-  FC, memo, Suspense, useCallback,
-} from 'react';
+import { memo, Suspense, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { AddCommentForm } from '@/features/AddCommentForm';
+import { AddCommentForm } from '@/features/addCommentForm';
 
 import { CommentList } from '@/entities/Comment';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Skeleton } from '@/shared/ui/Skeleton';
+import { Loader } from '@/shared/ui/Loader';
 import { VStack } from '@/shared/ui/Stack';
-import { Text } from '@/shared/ui/Text';
+import { Text, TextSize } from '@/shared/ui/Text';
 
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import {
+  fetchCommentsByArticleId,
+} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 
 interface ArticleDetailsCommentsProps {
-  className?: string;
-  id: string;
+    className?: string;
+    id?: string;
 }
 
-export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo((
-  props: ArticleDetailsCommentsProps,
-) => {
-  const { t } = useTranslation();
+export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
   const { className, id } = props;
-  const dispatch = useAppDispatch();
+  const { t } = useTranslation();
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+  const dispatch = useDispatch();
 
   const onSendComment = useCallback((text: string) => {
     dispatch(addCommentForArticle(text));
@@ -43,18 +40,18 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo((
   });
 
   return (
-    <VStack max gap="16" className={classNames('', {}, [className])}>
-      <Text title={t('comments')} />
-      <Suspense fallback={
-        <Skeleton width="100%" height={160} />
-      }
-      >
+    <VStack gap="16" max className={classNames('', {}, [className])}>
+      <Text
+        size={TextSize.L}
+        title={t('Comments')}
+      />
+      <Suspense fallback={<Loader />}>
         <AddCommentForm onSendComment={onSendComment} />
-        <CommentList
-          comments={comments}
-          isLoading={commentsIsLoading}
-        />
       </Suspense>
+      <CommentList
+        isLoading={commentsIsLoading}
+        comments={comments}
+      />
     </VStack>
   );
 });

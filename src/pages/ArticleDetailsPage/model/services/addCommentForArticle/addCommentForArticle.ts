@@ -6,39 +6,44 @@ import { getArticleDetailsData } from '@/entities/Article';
 import { Comment } from '@/entities/Comment';
 import { getUserAuthData } from '@/entities/User';
 
-import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchCommentsByArticleId';
+import {
+  fetchCommentsByArticleId,
+} from '../../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 
-export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfig<string>>(
-  'articleDetails/addCommentForArticle',
-  async (text, {
-    extra,
-    dispatch,
-    rejectWithValue,
-    getState,
-  }) => {
-    const userData = getUserAuthData(getState());
-    const article = getArticleDetailsData(getState());
+export const addCommentForArticle = createAsyncThunk<
+    Comment,
+    string,
+    ThunkConfig<string>
+    >(
+      'articleDetails/addCommentForArticle',
+      async (text, thunkApi) => {
+        const {
+          extra, dispatch, rejectWithValue, getState,
+        } = thunkApi;
 
-    if (!userData || !text || !article) {
-      return rejectWithValue('error');
-    }
+        const userData = getUserAuthData(getState());
+        const article = getArticleDetailsData(getState());
 
-    try {
-      const response = await extra.api.post<Comment>('/comments', {
-        articleId: article.id,
-        userId: userData.id,
-        text,
-      });
+        if (!userData || !text || !article) {
+          return rejectWithValue('no data');
+        }
 
-      if (!response.data) {
-        throw new Error();
-      }
+        try {
+          const response = await extra.api.post<Comment>('/comments', {
+            articleId: article.id,
+            userId: userData.id,
+            text,
+          });
 
-      dispatch(fetchCommentsByArticleId(article.id));
+          if (!response.data) {
+            throw new Error();
+          }
 
-      return response.data;
-    } catch (error) {
-      return rejectWithValue('error');
-    }
-  },
-);
+          dispatch(fetchCommentsByArticleId(article.id));
+
+          return response.data;
+        } catch (e) {
+          return rejectWithValue('error');
+        }
+      },
+    );

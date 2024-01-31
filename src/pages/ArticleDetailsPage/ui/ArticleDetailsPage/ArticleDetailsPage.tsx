@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
@@ -19,24 +19,21 @@ import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDet
 
 import cls from './ArticleDetailsPage.module.scss';
 
+interface ArticleDetailsPageProps {
+    className?: string;
+}
+
 const reducers: ReducersList = {
   articleDetailsPage: articleDetailsPageReducer,
 };
 
-interface ArticleDetailsPageProps {
-  className?: string;
-}
-
-const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
+const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
+  const { className } = props;
   const { t } = useTranslation('article-details');
-  const { id } = useParams<{id: string}>();
+  const { id } = useParams<{ id: string }>();
 
   if (!id) {
-    return (
-      <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        {t('not-found')}
-      </div>
-    );
+    return null;
   }
 
   return (
