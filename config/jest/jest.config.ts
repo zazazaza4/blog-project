@@ -42,6 +42,7 @@ export default {
   moduleNameMapper: {
     '\\.(s?css)$': 'identity-obj-proxy',
     '\\.(png|jpg|jpeg|gif|svg)$': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    '^@/(.*)$': '<rootDir>src/$1',
   },
   // The glob patterns Jest uses to detect test files
   testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
