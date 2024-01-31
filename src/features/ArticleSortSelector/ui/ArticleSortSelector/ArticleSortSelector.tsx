@@ -1,14 +1,13 @@
 import {
-  FC, memo, useCallback, useMemo,
+  FC, memo, useMemo,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { ArticleSortField } from '@/entities/Article';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { SortOrder } from '@/shared/types';
-import { Select } from '@/shared/ui/Select';
-
-import { SelectOption } from '../../../../shared/ui/Select/Select';
-import { ArticleSortField } from '../../model/consts/articleConsts';
+import { Select, SelectOption } from '@/shared/ui/Select';
 
 import cls from './ArticleSortSelector.module.scss';
 
@@ -33,7 +32,7 @@ export const ArticleSortSelector: FC<ArticleSortSelectorProps> = memo((
 
   const { t } = useTranslation();
 
-  const orderOptions = useMemo<SelectOption[]>(() => [
+  const orderOptions = useMemo<SelectOption<SortOrder>[]>(() => [
     {
       value: 'asc',
       content: t('asc'),
@@ -44,7 +43,7 @@ export const ArticleSortSelector: FC<ArticleSortSelectorProps> = memo((
     },
   ], [t]);
 
-  const sortFieldOptions = useMemo<SelectOption[]>(() => [
+  const sortFieldOptions = useMemo<SelectOption<ArticleSortField>[]>(() => [
     {
       value: ArticleSortField.CREATED,
       content: t('created'),
@@ -59,27 +58,19 @@ export const ArticleSortSelector: FC<ArticleSortSelectorProps> = memo((
     },
   ], [t]);
 
-  const changeSortHandler = useCallback((newSort: string) => {
-    onChangeSort(newSort as ArticleSortField);
-  }, [onChangeSort]);
-
-  const changeOrderHandler = useCallback((newOrder: string) => {
-    onChangeOrder(newOrder as SortOrder);
-  }, [onChangeOrder]);
-
   return (
     <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
       <Select
         options={sortFieldOptions}
         label={t('sort')}
         value={sort}
-        onChange={changeSortHandler}
+        onChange={onChangeSort}
       />
       <Select
         options={orderOptions}
         label={t('by')}
         value={order}
-        onChange={changeOrderHandler}
+        onChange={onChangeOrder}
         className={cls.order}
       />
     </div>
