@@ -1,17 +1,15 @@
 import type { Preview } from '@storybook/react';
 
-import { Theme } from '../../src/app/providers/ThemeProvider';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
-import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { TranslationDecorator } from '../../src/shared/config/storybook/TranslationDecorator/TranslationDecorator';
+import { Theme } from '../../src/shared/const/theme';
 
 const preview: Preview = {
   decorators: [
     TranslationDecorator,
     StyleDecorator,
-    ThemeDecorator(Theme.LIGHT),
     RouterDecorator,
     SuspenseDecorator,
   ],
@@ -22,6 +20,15 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
+    },
+    layout: 'fullscreen',
+    themes: {
+      default: 'Light',
+      list: [
+        { name: 'Light', class: Theme.LIGHT, color: '#fff' },
+        { name: 'Dark', class: Theme.DARK, color: '#000' },
+        { name: 'Orange', class: Theme.ORANGE, color: '#ffb005' },
+      ],
     },
   },
 };
