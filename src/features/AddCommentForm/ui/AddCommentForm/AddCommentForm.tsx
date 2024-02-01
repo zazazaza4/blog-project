@@ -9,8 +9,8 @@ import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
 import { HStack } from '@/shared/ui/Stack';
 
-import { getAddCommentFormError, getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
-import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentForm';
+import { getAddCommentFormError, getAddCommentFormText } from '../../model/selectors/commentFormSelectors';
+import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/commentFormSlice';
 
 import cls from './AddCommentForm.module.scss';
 

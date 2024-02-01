@@ -9,7 +9,7 @@ import {
 } from '@/pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from '@/pages/ArticlesPage';
 
-import { AddCommentFormSchema } from '@/features/AddCommentForm';
+import { AddCommentFormSchema } from '@/features/addCommentForm';
 import { LoginSchema } from '@/features/AuthByUsername';
 import { ProfileSchema } from '@/features/editableProfileCard';
 import { ScrollSaveSchema } from '@/features/ScrollSave';
