@@ -36,7 +36,10 @@ jobs:
         run: npm run storybook:build
         if: always()
       - name: screenshot testing
-        run: npm run test:ui:ci
+        run: mv .loki reports/
+        if: always()
+      - name: Move loki
+        run: npm run test:ui:report
         if: always()
       - name: Generate HTML report
         run: npm run test:ui:report
@@ -48,7 +51,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         if: always()
         with:
-          path: ".loki"
+          path: "reports"
       - name: Deploy to GitHub Pages
         id: deployment
         if: always()
@@ -66,7 +69,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm ci --force
+        run: npm install --force
       - name: linting typescript
         run: npm run lint:ts
         if: always()
